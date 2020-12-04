@@ -1,0 +1,71 @@
+<!--WEATHER CARD-->
+<div *ngIf="showResults == true">
+    <div id="weatherCard" class='card card-body mx-auto mb-4 mt-4' style='max-width: 35rem; background-color: #90CCE8;'>
+        <div class='container'>
+        <div class = 'row mb-2'>
+            <div class='col-8'>
+                <div id='city' class='row mb-1'>
+                    <h2>{{city}}</h2>
+                </div>
+                <div id='timezone' class='row mb-2'>
+                    <h2>{{forecastJSON.forecast.timezone}}</h2>
+                </div>
+                <div id='temp' class='row mb-2'>
+                    <h1>{{forecastJSON.forecast.currently.temperature | number:'.0-0'}}</h1><img src='https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png' height ='10' width='10'>
+                    <span><h1>F</h1></span>
+                </div>
+                <div id='summary' class='row mb-4'>
+                    {{forecastJSON.forecast.currently.summary}}
+                </div>
+            </div>
+            <div class='col-4 my-auto mx-auto'>
+                <img src= "{{forecastJSON.customSearch.items[0].link}}" height=100 width=100 >
+            </div>
+        </div>
+
+        <div class='row'>
+            <div class='col-2'>
+                <div class='icon'>
+                    <img matTooltip="Humidity" src='https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-16-512.png' height=30 width=30/>                               
+                    <br>{{forecastJSON.forecast.currently.humidity}} 
+                </div>
+            </div>
+            
+            <div class='col-2'>
+                <div class='icon'>
+                    <img matTooltip="Pressure" src='https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-25-512.png' height=30 width=30>                           
+                    <br>{{forecastJSON.forecast.currently.pressure}}
+                </div>
+            </div>
+            
+            <div class='col-2'>
+                <div class="icon">
+                    <img matTooltip="WindSpeed" src='https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-27-512.png' height=30 width=30>                                
+                    <br>{{forecastJSON.forecast.currently.windSpeed}}
+                </div>
+            </div>
+                                
+            <div class='col-2'>
+                <div class="icon">
+                    <img matTooltip="Visibility" src='https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-30-512.png' height=30 width=30> 
+                    <br>{{forecastJSON.forecast.currently.visibility}}
+                </div>
+            </div>
+                        
+            <div class='col-2'>
+                <div class='icon'>
+                    <img matTooltip="CloudOver" src='https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-28-512.png' height=30 width=30>                            
+                    <br>{{forecastJSON.forecast.currently.cloudCover}} 
+                </div>
+            </div>
+        
+            <div class='col-2'>
+                <div class='icon'>
+                    <img matTooltip="Ozone" src='https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-24-512.png' height=30 width=30>                              
+                    <br>{{forecastJSON.forecast.currently.ozone}}                                
+                </div>
+            </div>                      
+        </div>
+        </div>         
+    </div>
+</div>

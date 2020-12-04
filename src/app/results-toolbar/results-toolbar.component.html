@@ -1,0 +1,37 @@
+<!-- CURRENTLY, HOURLY, WEEKLY TABS-->
+<div>
+    <ul class="nav nav-tabs mx-auto" role="tablist" style='max-width:52rem;'>             
+        <li class="nav-item">
+            <a class="nav-link active" href="#current" role="tab" data-toggle="tab" id='currentlyTab'>Currently</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#hourly" role="tab" data-toggle="tab" >Hourly</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#weekly" role="tab" data-toggle="tab" (click)="refreshForecastJSON()">Weekly</a>
+        </li>
+        <li class="nav-item ml-auto">
+            <button class="nav link btn twitterButton" (click)="tweetWeather()">
+                <img src="https://img.icons8.com/color/48/000000/twitter-squared.png">
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link btn" (click)="clickFavorite()"><i class='material-icons {{starStyle}}'>{{currIcon}}</i></button>
+        </li>
+    </ul>
+</div>
+
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade show active" id="current">
+        <app-weather-card></app-weather-card>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="hourly">
+        <app-hourly-charts></app-hourly-charts>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="weekly">
+        <app-weekly-chart></app-weekly-chart>
+    </div>
+</div>
+
+
+   

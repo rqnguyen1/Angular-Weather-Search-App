@@ -1,0 +1,110 @@
+<!--HOURLY CHARTS-->
+<div *ngIf="showResults == true">
+    <div class="col-sm-3 offset-sm-2 mt-5 pb-4">
+        <select class="browser-default custom-select" [(ngModel)]='chartParameter' name='chartParameter'>           
+            <option value='1' selected>Temperature</option>
+            <option value='2'>Pressure</option>
+            <option value='3'>Humidity</option>
+            <option value='4'>Ozone</option>
+            <option value='5'>Visibility</option>
+            <option value='6'>Wind Speed</option>
+        </select>
+    </div>
+
+
+    <div *ngIf="chartParameter == 1">
+        <div class="col-sm-8 mx-auto">
+            <canvas
+                baseChart
+                [chartType]="'bar'"
+                [datasets]="tempChartData"
+                [labels]="chartLabels"
+                [options]="tempChartOptions"
+                [legend]="true"
+                [colors]="chartColors"
+                >
+            </canvas>
+            
+        </div>
+    </div>  
+
+    <div *ngIf="chartParameter == 2" >
+        <div class="col-sm-8 mx-auto">
+            <canvas
+                baseChart
+                [chartType]="'bar'"
+                [datasets]="pressChartData"
+                [labels]="chartLabels"
+                [options]="pressChartOptions"
+                [legend]="true"
+                [colors]="chartColors"
+                >
+            </canvas>
+        
+        </div>
+    </div>
+
+    <div *ngIf="chartParameter == 3" >
+        <div class="col-sm-8 mx-auto">
+            <canvas
+                baseChart
+                [chartType]="'bar'"
+                [datasets]="humidityChartData"
+                [labels]="chartLabels"
+                [options]="humidityChartOptions"
+                [legend]="true"
+                [colors]="chartColors"
+                >
+            </canvas>                           
+        </div>
+
+    </div>  
+
+    <div *ngIf="chartParameter == 4" >
+        <div class="col-sm-8 mx-auto">
+            <canvas
+                baseChart
+                [chartType]="'bar'"
+                [datasets]="ozoneChartData"
+                [labels]="chartLabels"
+                [options]="ozoneChartOptions"
+                [legend]="true"
+                [colors]="chartColors"
+                >
+            </canvas>
+        
+        </div>
+    </div>  
+
+    <div *ngIf="chartParameter == 5" >
+        <div class="col-sm-8 mx-auto">
+            <canvas
+                baseChart
+                [chartType]="'bar'"
+                [datasets]="visibilityChartData"
+                [labels]="chartLabels"
+                [options]="visibilityChartOptions"
+                [legend]="true"
+                [colors]="chartColors"
+                >
+            </canvas>
+        
+        </div>
+    </div>
+
+    <div *ngIf="chartParameter == 6" >
+        <div class="col-sm-8 mx-auto">
+            <canvas
+                baseChart
+                [chartType]="'bar'"
+                [datasets]="windSpeedChartData"
+                [labels]="chartLabels"
+                [options]="windSpeedChartOptions"
+                [legend]="true"
+                [colors]="chartColors"
+                >
+            </canvas>
+        
+        </div>
+    </div>
+</div>

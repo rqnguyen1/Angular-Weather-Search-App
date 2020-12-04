@@ -1,0 +1,35 @@
+mat-card {
+    max-width: 50rem;
+    margin-top: 3rem;
+    background-color:#5096BD;
+    box-shadow: 4px 4px 4px !important;
+}
+
+#myForm {
+    color: white;
+}
+
+.btn-primary {
+    margin-right: 10px;
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+}
+
+.error {
+    color: red;
+    background-color: #5096BD;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.col-form-label:after {
+    content: "*";
+    color: red;
+}
+
+h3 {
+    padding-bottom: 1rem;
+}

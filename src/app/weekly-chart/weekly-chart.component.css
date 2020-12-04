@@ -1,0 +1,10 @@
+.modal-header {
+    background-color:#5096BD!important;
+}
+.modal-body {
+    background-color: #90CCE8!important;
+}
+
+#modalTemp {
+    display: flex!important;
+}

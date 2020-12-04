@@ -1,0 +1,17 @@
+.nav-item > a {
+    color: black!important;
+}
+
+.twitterButton {
+    padding: 0px!important;
+    margin-bottom: -5rem;
+   
+}
+
+.checkedFavorite {
+    color: #B3AA44;
+}
+
+.uncheckedFavorite {
+    color: black;
+}

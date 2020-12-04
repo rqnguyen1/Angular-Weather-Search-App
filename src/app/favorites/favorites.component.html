@@ -1,0 +1,26 @@
+<!---FAVORITES LIST-->
+<div *ngIf="fetchedFavorites.length == 0">
+    <div class="alert alert-warning mt-5 col-sm-8 mx-auto" role="alert">
+        No records.
+     </div>
+</div>
+<div *ngIf="fetchedFavorites.length > 0" class="col-sm-8 mx-auto">
+    <table class="table table-striped text-center">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Favorite</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let entry of fetchedFavorites; let i = index">
+                <td>{{i+1}}</td>
+                <td> <img src= "{{entry.seal}}" height=50 width=50 ></td>
+                <td><a href='#' (click) = "requestFavorite(entry.lat, entry.lng, entry.state, entry.city)" matTooltip="{{entry.city}}" matTooltipPosition="below">{{entry.city}}</a></td>
+                <td>{{entry.state}}</td>
+                <td><button (click)="deleteFavorite(entry)" style="background-color: white; border: none;"><i class="material-icons" style="color: #B3AA44;">delete</i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,59 @@
+<!--HIDDEN MODAL BUTTON-->
+<button id="modalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" hidden="hidden">
+    Launch demo modal
+</button>
+
+<!--MODAL-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" *ngIf="modalJson">{{modalTime}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body container">
+                <div class="row">
+                    <div class="col offset-sm-1" *ngIf="modalJson">
+                            <h1>{{city}}</h1>
+
+                            <div id="modalTemp">
+                            <h1>{{modalJson.currently.temperature | number:'.0-0'}}</h1>
+                            <img src='https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png' height ='10' width='10'>
+                            <h1>F</h1>
+                            </div>
+
+                            {{modalJson.currently.summary}}
+                    </div>
+                    <div class="col" *ngIf="modalJson">
+                        <img src='{{weatherIcons[modalJson.currently.icon]}}' width=120 height=120>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="row">
+                    <div class="col-sm-6 offset-sm-6" *ngIf="modalJson">Precipitation: {{modalJson.currently.precipIntensity | number:'.0-2'}} </div>   
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 offset-sm-6" *ngIf="modalJson">Chance of Rain: {{modalJson.currently.precipProbability*100| number:'.0-0'}}%</div>   
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 offset-sm-6" *ngIf="modalJson">Wind Speed: {{modalJson.currently.windSpeed | number:'.0-2'}} mph</div>   
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 offset-sm-6" *ngIf="modalJson">Humidity: {{modalJson.currently.humidity*100 | number:'.0-0'}}%</div>   
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 offset-sm-6" *ngIf="modalJson">Visibility: {{modalJson.currently.visibility | number:'.0-2'}} miles</div>   
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-8 mx-auto mt-5">
+   <div id="chartContainer"></div>
+</div>
