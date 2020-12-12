@@ -1,6 +1,6 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
+Full-stack Angular Weather Search Web App with a Node.js RESTful backend. Bootstrap is utilized for responsive design, and Chart.js and CanvasJS are utilized to translate weather data into insightful visualizations.
 
 ## Development server
 
